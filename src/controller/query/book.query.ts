@@ -15,7 +15,7 @@ export class BookQuery {
   @IsDateString()
   @IsOptional()
   @Type(() => String)
-  date: String;
+  date: string;
 
   @IsInt()
   @IsOptional()
