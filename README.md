@@ -34,3 +34,23 @@ Seperated modules based on function
 Flow is as follows:
 
 *Controller* -> *Service* -> *Repository* -> *Mongoose Schema* -> *MongoDB (Docker)*
+
+## Routes
+
+### */books/insert*
+
+Exposed this endpoint to insert data from [mocky](https://run.mocky.io/v3/d7f02fdc-5591-4080-a163-95a08ce6895e) to MongoDB
+
+### */books/search*
+
+Endpoint for searching books on the database
+
+It accepts the following query parameters:
+- title
+- isbn
+- date
+- price
+- currency
+- status
+- author
+- category
