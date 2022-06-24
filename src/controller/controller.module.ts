@@ -1,9 +1,10 @@
+import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { ServiceModule } from 'src/service/service.module';
-import { AppController } from './app.controller';
+import { BookController } from './book.controller';
 
 @Module({
-  imports: [ServiceModule],
-  controllers: [AppController],
+  imports: [ServiceModule, HttpModule],
+  controllers: [BookController],
 })
 export class ControllerModule {}
