@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { FilterQuery, Model } from 'mongoose';
 import { Book, BookDocument } from 'src/schema/book.schema';
 
 @Injectable()
@@ -10,9 +10,11 @@ export class BookRepository {
     private books: Model<BookDocument>
   ) {}
 
-  async insertBook() {
-    this.books.insertMany({
-      title: 'test'
-    });
+  async insertBook(books: Book[]) {
+    this.books.insertMany(books);
+  }
+
+  async findMany(query: FilterQuery<BookDocument>) {
+    return this.books.find(query);
   }
 }
